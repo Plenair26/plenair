@@ -1,0 +1,41 @@
+PLENAIR STARTEN OP WINDOWS
+==========================
+
+1. Dubbelklik op start.bat
+   Het installeert alles en opent de site in je browser.
+   Zolang het zwarte venster open is, haalt de site zelf elke 10 minuten nieuws
+   en elk uur moties op. Ververs de pagina (F5) om nieuwe berichten te zien.
+
+2. Nieuws toevoegen (eenmalig instellen)
+   Voor het nieuws is een API-sleutel van Anthropic nodig. Dat kost een klein bedrag per gebruik.
+   a. Ga naar https://console.anthropic.com en maak een account.
+   b. Zet tegoed op je account (Billing) en maak een sleutel aan (API Keys).
+      De sleutel begint met sk-ant-
+   c. Klik in deze map met de rechtermuisknop op het bestand .env en kies "Openen met" > Kladblok.
+      (Zie je .env niet? Start eerst één keer start.bat, dan wordt het aangemaakt.)
+   d. Zet je sleutel direct achter het =-teken, zonder spaties:
+         ANTHROPIC_API_KEY=sk-ant-...
+   e. Sla op en sluit Kladblok. Deel deze sleutel met niemand.
+   f. Dubbelklik opnieuw op start.bat.
+
+3. Waar staan je gegevens?
+   Je sleutel en de database met nieuws en moties staan in een vaste map:
+      C:\Users\<jouw naam>\Plenair
+   Krijg je een nieuwe versie (nieuwe zip)? Uitpakken en op start dubbelklikken.
+   Je hoeft NIETS te kopieren: de nieuwe versie gebruikt automatisch dezelfde gegevens.
+
+4. De site op je telefoon bekijken (zonder hosting)
+   a. Dubbelklik op start-telefoon.bat in plaats van start.bat.
+      De eerste keer installeert het een gratis tunnelprogramma van Cloudflare.
+      Daarna vraagt het je om nog een keer te dubbelklikken.
+   b. In het zwarte venster verschijnt een adres zoals:
+         https://iets-willekeurigs.trycloudflare.com
+   c. Typ of plak dat adres in de browser op je telefoon (tip: mail of app het naar jezelf).
+   d. De computer moet aan blijven en mag niet in slaapstand. Zet slaapstand uit via
+      Instellingen > Systeem > Aan/uit en batterij > Scherm en slaapstand > Nooit.
+   e. Bij elke nieuwe start krijg je een nieuw adres.
+
+5. Stoppen
+   Sluit het zwarte venster. Dan stoppen de site en het ophalen van nieuws.
+
+Werkt iets niet? Maak een screenshot van het zwarte venster.

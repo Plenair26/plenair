@@ -1,0 +1,80 @@
+PLENAIR GRATIS ONLINE ZETTEN MET GITHUB (laptop mag daarna uit)
+================================================================
+
+Wat je krijgt: een vast adres zoals https://jouwnaam.github.io/plenair/
+Elke 15 minuten haalt GitHub zelf nieuws en moties op en zet de site bij.
+Kosten GitHub: 0 euro. Kosten Claude: zoals nu, maximaal $0,40 per dag.
+
+BELANGRIJK VOORAF
+- Gebruik een VERSE, net uitgepakte map politieknieuws uit de zip.
+  NIET de map waarin je start.bat hebt gebruikt: daar staat je sleutel in het bestand .env.
+- Je sleutel zet je straks alleen als "secret" in GitHub. Niemand kan die zien.
+
+STAP 1 - Account maken
+  Ga naar https://github.com en klik op "Sign up". Volg de stappen.
+  Onthoud je gebruikersnaam: die komt in het adres van je site.
+
+STAP 2 - Nieuwe repository (projectmap) maken
+  a. Klik rechtsboven op het plusje "+" en kies "New repository".
+  b. Repository name: plenair
+  c. Kies "Public". (Dat is nodig voor gratis GitHub Pages. Je code is dan zichtbaar,
+     je sleutel niet.)
+  d. Vink verder niets aan. Klik op "Create repository".
+
+STAP 3 - De bestanden uploaden
+  a. Op de lege pagina die je nu ziet, klik je op de link "uploading an existing file".
+  b. Open in Verkenner je verse map politieknieuws.
+  c. Selecteer ALLES in die map met Ctrl + A (ook de map .github!).
+  d. Sleep alles naar het vak in je browser. Wacht tot alle bestanden in de lijst staan.
+  e. Klik onderaan op "Commit changes".
+  f. Controleer: staat er in je repository nu een map ".github"? Dan is het goed.
+     Staat die er NIET? Doe dan dit:
+       - Klik op "Add file" > "Create new file".
+       - Typ als naam precies:  .github/workflows/update.yml
+       - Open op je computer het bestand .github\workflows\update.yml met Kladblok,
+         kopieer alles (Ctrl + A, Ctrl + C) en plak het in GitHub.
+       - Klik op "Commit changes".
+
+STAP 4 - Je API-sleutel als geheim toevoegen
+  a. Klik in je repository bovenaan op "Settings".
+  b. Klik links op "Secrets and variables" en dan op "Actions".
+  c. Klik op "New repository secret".
+  d. Name:   ANTHROPIC_API_KEY
+     Secret: plak je sleutel (begint met sk-ant-)
+  e. Klik op "Add secret".
+
+STAP 5 - GitHub Pages aanzetten
+  a. Nog steeds in "Settings": klik links op "Pages".
+  b. Bij "Build and deployment" > "Source": kies "GitHub Actions".
+
+STAP 6 - De eerste keer starten
+  a. Klik bovenaan op "Actions".
+  b. Zie je een melding over workflows? Klik op de groene knop om ze aan te zetten.
+  c. Klik links op "Site bijwerken".
+  d. Klik rechts op "Run workflow" en dan nog een keer op de groene "Run workflow".
+  e. Wacht ongeveer 5 minuten. Een groen vinkje = klaar. Een rood kruis = klik erop
+     en stuur een screenshot naar Claude.
+
+STAP 7 - De site bekijken
+  Je site staat op:  https://JOUWGEBRUIKERSNAAM.github.io/plenair/
+  (Je ziet het adres ook bij Settings > Pages.)
+  Open het op je telefoon en zet het op je beginscherm
+  (iPhone: deelknop > "Zet op beginscherm"; Android: menu > "Toevoegen aan startscherm").
+
+VERSCHILLEN MET DE VERSIE OP JE LAPTOP
+- Nieuws ververst elke 15 minuten (GitHub begint soms een paar minuten later).
+- Er is geen zoekfunctie en geen filter bij de moties; alle recente moties staan op één pagina.
+- Draai je start.bat op je laptop tegelijk, dan heb je twee aparte sites met elk een eigen
+  dagbudget van $0,40. Gebruik dus liever één van de twee.
+
+SITE TIJDELIJK STOPPEN (ook via je telefoon, op github.com of in de GitHub-app)
+- Alleen het bijwerken stoppen (site blijft zichtbaar, geen kosten meer):
+    Actions > "Site bijwerken" > de drie puntjes (...) > "Disable workflow".
+  Weer aanzetten: zelfde plek > "Enable workflow".
+- Site helemaal offline halen:
+    Settings > Pages > bij "Your site is live" de drie puntjes (...) > "Unpublish site".
+  Weer online: Actions > "Site bijwerken" > "Run workflow".
+
+EEN NIEUWE VERSIE VAN CLAUDE ZETTEN
+- Upload de gewijzigde bestanden op dezelfde manier (stap 3). GitHub zet de site daarna
+  vanzelf opnieuw online, binnen een paar minuten. Je nieuws en moties blijven bewaard.
